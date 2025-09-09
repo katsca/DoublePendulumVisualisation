@@ -23,7 +23,7 @@ This project gives visualization of a double pendulum with two stiff uniform rod
 
 Run the main Script
    ```bash
-   python DoublePendulum.py
+   python doublePendulum.py
    ```
 
 The flags you can add onto the end<br>
@@ -86,6 +86,7 @@ The flags you can add onto the end<br>
 
 ## Workings to get the equations
 Can be found in Double_Pendulum_Workings.pdf
+
 
 
 
