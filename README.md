@@ -56,12 +56,12 @@ The flags you can add onto the end<br>
    * Default: 9.8
    
 --theta1:
-   * The initial angle of rod 1 to the verticle
+   * The initial angle of rod 1 to the verticle in rad
    * Must be a positive float between -pi and pi
    * Default: Some random float between -pi and pi
 
 --theta2:
-   * The initial angle of rod 2 to the verticle
+   * The initial angle of rod 2 to the verticle in rad
    * Must be a positive float between -pi and pi
    * Default: Some random float between -pi and pi
 
@@ -82,4 +82,5 @@ The flags you can add onto the end<br>
 
 ## Workings to get the equations
 Can be found in Double_Pendulum_Workings.pdf
+
 
