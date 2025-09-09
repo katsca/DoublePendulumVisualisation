@@ -75,6 +75,10 @@ The flags you can add onto the end<br>
    * Must be a positive float
    * Default: 20.0
 
+--t_speed:
+   * The time between each frame of the animation in s
+   * Must be a positive float
+   * Default: 0.1
 
 ## EXAMPLE IMAGE OF PROGRAMME WORKING
 ![alt text](https://github.com/katsca/DoublePendulumVisualisation/blob/main/ExampleImage.png?raw=true)
@@ -82,5 +86,6 @@ The flags you can add onto the end<br>
 
 ## Workings to get the equations
 Can be found in Double_Pendulum_Workings.pdf
+
 
 
