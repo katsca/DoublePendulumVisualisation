@@ -26,7 +26,7 @@ Run the main Script
    python DoublePendulum.py
    ```
 
-The flags you can add onto the end
+The flags you can add onto the end<br>
 --h:
    * Help
    
@@ -82,3 +82,4 @@ The flags you can add onto the end
 
 ## Workings to get the equations
 Can be found in Double_Pendulum_Workings.pdf
+
