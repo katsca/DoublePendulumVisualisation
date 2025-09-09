@@ -58,47 +58,36 @@ def positive_int(value):
     return i
 
 
-#GRAVITY acceleration in m/s^2
-g = 9.8
-
-#Length in m
-l1 = 1
-l2 = 1
-
-max_axis_length = l1+l2
-#mass in kg
-m1 = 1
-m2 = 1
 
 #Randomly generate the initial theta1 and theta2 between [-pi, pi]
 theta1_init = random.uniform(-np.pi, np.pi)
 theta2_init = random.uniform(-np.pi, np.pi)
 
-#Progression of time
-T = 20
-t_spacing = 1000
-
 #Input arguments
 parser = argparse.ArgumentParser(description="Double Pendulum visualisation no Damping")
-parser.add_argument("--length1", type=positive_float, default=l1,
+parser.add_argument("--length1", type=positive_float, default=1.0,
                     help="Length of rod 2 in m  (default: 1)")
-parser.add_argument("--length2", type=positive_float, default=l2,
+parser.add_argument("--length2", type=positive_float, default=1.0,
                     help="Length of rod 2 in m (default: 1)")
-parser.add_argument("--mass1", type=positive_float, default=m1,
+parser.add_argument("--mass1", type=positive_float, default=1.0,
                     help="Mass of rod 1 in kg (default: 1)")
-parser.add_argument("--mass2", type=positive_float, default=m2,
+parser.add_argument("--mass2", type=positive_float, default=1.0,
                     help="Mass of rod 2 in kg (default: 1)")
-parser.add_argument("--gravity", type=positive_float, default=g,
+parser.add_argument("--gravity", type=positive_float, default=9.8,
                     help="Acceleration of gravity in m/s^2 (default: 9.8)")
 parser.add_argument("--theta1", type=valid_float_angle, default=theta1_init,
                     help="Start angle of theta 1 in rad (default: random)")
 parser.add_argument("--theta2", type=valid_float_angle, default=theta2_init,
                     help="Start angle of theta 2 in rad (default: random)")
-parser.add_argument("--t_samples", type=positive_int, default=t_spacing,
+parser.add_argument("--t_samples", type=positive_int, default=1000,
                     help="Number of samples taken (default: 1000)")
-parser.add_argument("--t_length", type=positive_float, default=T,
+parser.add_argument("--t_length", type=positive_float, default=20,
                     help="Length of time to run for in s (default: 20)")
+
+parser.add_argument("--t_speed", type=positive_float, default=0.1,
+                    help="The time between each frame in the animation in s (default: 0.1)")
 args = parser.parse_args()
+
 l1 = args.length1
 l2 = args.length2
 m1 = args.mass1
@@ -108,10 +97,8 @@ theta1_init = args.theta1
 theta2_init = args.theta2
 T = args.t_length
 t_spacing = args.t_samples
-
+t_interval = args.t_speed
 max_axis_length = l1+l2
-
-
 
 t_eval = np.linspace(0,T,1000)
 y0 = [theta1_init, 0.0, theta2_init, 0.0]
@@ -213,6 +200,6 @@ def update(i):
 
     
 ani = FuncAnimation(fig, update, frames=len(t), init_func=init,
-                    interval=0.1, blit=False)
+                    interval=t_interval, blit=False)
 plt.legend(loc="upper right")
 plt.show()
